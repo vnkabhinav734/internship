@@ -10,7 +10,6 @@ void Date();
 void City();
 void Title();
 void Dept();
-void insert(char [50]);
 //void OneColumnDisplay(char [10]);
 struct record
 {
@@ -42,18 +41,11 @@ i++;}
 number=i;
 fclose(fp);
 scanf(" %[^\n]s",query);
-p=strtok(p," ");
-if(strcmp(p,"insert")==0)
-{
-    insert(query);
-    exit(1);
-}
   for (i = 0;query[i] != '\0';i++)
     {
         if (query[i] == ' ')
             count++;
     }
-    printf("%d\n",count);
     if(count==1)
     {
         p=strtok(query,"\n");
@@ -253,11 +245,5 @@ void Dept()
     fclose(fp);
 }*/
 
-void insert(char s[50])
-{
-    FILE *fp=fopen("employee.txt","a+");
-    fprintf(fp,"%s",s);
-    fclose(fp);
-}
 
 
